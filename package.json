@@ -1,0 +1,32 @@
+{
+  "name": "gullibleadmin",
+  "version": "1.0.0",
+  "description": "An open source XSS bot",
+  "main": "gullibleAdmin.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr455/GullibleAdmin.git"
+  },
+  "keywords": [
+    "xss",
+    "bot"
+  ],
+  "author": "gr455",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gr455/GullibleAdmin/issues"
+  },
+  "homepage": "https://github.com/gr455/GullibleAdmin#readme"
+}
