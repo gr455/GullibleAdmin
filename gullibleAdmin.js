@@ -10,12 +10,12 @@ const config = require('./config/config.json');
 const prefs = require('./config/prefs.json');
 
 /* Config */
-const HOST_BLACKLIST = config.urlBlacklist || ["example.com"];
-const HOST_BLACKLIST_REGEX= config.urlBlacklistRegex || "$^";
+const HOST_BLACKLIST = config.hostBlacklist || [];
+const HOST_BLACKLIST_REGEX= config.hostBlacklistRegex || "$^";
 const PROTOCOL_WHITELIST = config.protocolWhitelist || ["http:", "https:"];
 const URL_REGEX =  config.urlRegex || /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/i;
 const COOKIES = config.adminCookies || [];
-const TIMEOUT = parseInt(config.pageTimeout) || 1000000;
+const TIMEOUT = parseInt(config.pageTimeout) || 0;
 /* End Config */
 
 const app = express();
