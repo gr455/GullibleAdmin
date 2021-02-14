@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Use custom title here -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet" />
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<style type="text/css">
+		html, body {
+			text-align: center;
+			height: 100%;
+		}
+		input {
+			position: relative;
+			height: 40px;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		button {
+			position: relative;
+			top: 50px;
+			margin: 0 auto;
+		}
+
+		.f-body {
+			position: relative;
+			text-align: center;
+			margin-top: 30%;
+		}
+
+		.container {
+			text-align: center;
+			height: 100%;
+		}
+
+		footer {
+			position: relative;
+			/*margin-top: auto;*/
+		}
+
+		.g-recaptcha{
+			position: relative;
+			margin-top: 5%;
+			margin: 5% 35%;
+		}
+	</style>
 	<title><%= prefs.customTitle %></title>
 </head>
 <body>
-	<form action="/bot" method="post">
-		<input name="url" placeholder="Where should the bot go?" />
-		<button type="submit">Submit</button>
-	</form>
+	<div class="container">
+		<div class="f-body">
+			<h4><%= prefs.customHeading %></h4>
+			<form action="/bot" method="post">
+				<% if(flashError){ %>
+				<p style="color: red;"><%= flashError %></p>
+				<% } %>
+				<% if(flashSuccess){ %>
+				<p style="color: green;"><%= flashSuccess %></p>
+				<% } %>
+				<input name="url" placeholder="Where should the bot go?" />
+				<% if(usingRecaptcha2){ %>
+				<div class="g-recaptcha" data-sitekey="<%= captchaSiteKey %>"></div>
+				<% } %>
+				<input type="hidden" name="captcha">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+
+	<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+   	<a href="https://github.com/gr455/GullibleAdmin"> GullibleAdmin </a> by <a href="https://zense.co.in">Zense</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </body>
 </html>
